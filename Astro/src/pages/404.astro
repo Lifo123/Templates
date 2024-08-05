@@ -5,6 +5,14 @@ import Layout from '../layouts/Layout.astro'
 
 ---
 
+<Layout title="404 Error" description='No Page Found'>
+    <div class="w-100 f-col f-align-center">
+        <h1>Error 404</h1>
+        <h2>Page Not Found</h2>
+        <p class="btn-black br-6 d-flex mt-3" onclick="history.back()">Get Back</p>
+    </div>
+</Layout>
+
 <style is:raw>
     span{
         padding: 12px 24px;
@@ -19,11 +27,3 @@ import Layout from '../layouts/Layout.astro'
         font-weight: 700;
     }
 </style>
-
-<Layout title="About" description='About page'>
-    <div class="w-100 f-col f-align-center">
-        <h1>Error 404</h1>
-        <h2>Page Not Found</h2>
-        <a class="pc-btn-black br-6 d-flex mt-3" href="/PromedyCalculator">Get Back</a>
-    </div>
-</Layout>

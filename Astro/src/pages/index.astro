@@ -1,45 +1,14 @@
 ---
-import Header from "../components/Header/Header.astro";
+import { ExampleStore } from "../context/GlobalStore";
+
 import Layout from "../layouts/Layout.astro";
+import PromotionAdd from '../components/PromotionAdd/PromotionAdd.astro'
+
+
+const example = ExampleStore.get();
 ---
 
-<style is:raw>
-    main {
-        padding-block: 90px;
-        width: 70%;
-        height: max-content;
-        gap: 24px;
-    }
-
-    h2 {
-        font-size: clamp(36px, 4.6vw, 56px);
-        font-weight: bold;
-    }
-
-    main p {
-        width: 70%;
-        margin-bottom: 10px;
-        color: #4f4f4f;
-        font-weight: 500;
-        line-height: 22px;
-        font-size: clamp(1rem, 0.6vw, 1.5rem);
-    }
-</style>
-
-<Layout title="PromedyCalculator" description="Landing page">
-    <Header />
-    <main class="f-col f-align-center mx-auto">
-        <h2 class="text-center w-90">
-            Calculate Your Average Grades Instantly and Effortlessly!
-        </h2>
-        <p class="text-center">
-            Quickly get accurate results with our simple tool. No more manual
-            calculations—just enter your grades and get your average in seconds.
-        </p>
-        <a
-            href="/PromedyCalculator/App"
-            class="pc-btn-black br-6 d-flex f-center"
-            style="font-size: 16px;">Get Started For Free</a
-        >
-    </main>
+<Layout title="Project" description="desc">
+    <p>{example}</p>
+    <PromotionAdd />
 </Layout>
