@@ -1,0 +1,68 @@
+---
+//Css
+import "../App/App.css";
+
+//Astro
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header/Header.astro";
+import Footer from "../components/Footer/Footer.astro";
+import PromotionAdd from "../components/PromotionAdd/PromotionAdd.astro";
+
+//JSX
+import Result from "../App/Result/Result";
+import InputContainer from "../App/Input/InputContainer";
+
+---
+
+<style is:raw>
+    main {
+        width: 76%;
+        padding-block: 40px;
+        gap: 40px;
+    }
+    .btn-back {
+        text-decoration: none;
+        width: max-content;
+    }
+    .btn-back span {
+        height: 40px;
+        width: 40px;
+    }
+</style>
+
+<Layout
+    title="PromedyCalculator | App"
+    description="Calculate promedy of the semester easly."
+>
+    <Header app={true} />
+    <main class="f-col mx-auto" id="App">
+        <a href="/PromedyCalculator" class="btn-back f-row f-align-center">
+            <span>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="#000"
+                >
+                    <path
+                        d="M14.2893 5.70708C13.8988 5.31655 13.2657 5.31655 12.8751 5.70708L7.98768 10.5993C7.20729 11.3805 7.2076 12.6463 7.98837 13.427L12.8787 18.3174C13.2693 18.7079 13.9024 18.7079 14.293 18.3174C14.6835 17.9269 14.6835 17.2937 14.293 16.9032L10.1073 12.7175C9.71678 12.327 9.71678 11.6939 10.1073 11.3033L14.2893 7.12129C14.6799 6.73077 14.6799 6.0976 14.2893 5.70708Z"
+                    ></path>
+                </svg>
+            </span>
+            <p>Back</p>
+        </a>
+
+        <section class="app-container mx-auto">
+            <Result client:visible />
+            <section class="app-right f-col">
+                <h3 class="app-subtitle">Promedy Calculator</h3>
+                <p class="app-text">
+                    Please enter the necessary inputs to calculate your results
+                    accurately.
+                </p>
+                <InputContainer client:visible />
+            </section>
+        </section>
+    </main>
+    <PromotionAdd />
+    <Footer />
+</Layout>

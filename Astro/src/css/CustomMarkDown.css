@@ -1,0 +1,12 @@
+*{
+    font-family: Inter, sans-serif;
+}
+
+:root{
+    --f-text: #252525;
+    --f-title: #000;
+}
+
+h2{
+    background-color: aqua  ;
+}

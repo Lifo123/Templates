@@ -1,0 +1,25 @@
+.none{
+    background-color: transparent;
+    border: none !important;
+    outline: none;
+    pointer-events: none;
+    user-select: none;
+    outline: none;
+    cursor: auto !important;
+    width: 240px;
+}
+
+.app-container{
+    height: max-content;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    place-items: center;
+    gap: 30px;
+    margin-bottom: 100px;
+}
+
+.app-container .pc-btn-black{
+    padding: 12px 24px !important;
+    align-self: flex-end;
+}
