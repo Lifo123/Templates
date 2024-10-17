@@ -1,14 +1,17 @@
 ---
-import { ExampleStore } from "../context/GlobalStore";
-
-import Layout from "../layouts/Layout.astro";
-import PromotionAdd from '../components/PromotionAdd/PromotionAdd.astro'
-
-
-const example = ExampleStore.get();
+import Count from "@Apps/Count";
+import Layout from "@Layouts/Layout.astro";
 ---
 
-<Layout title="Project" description="desc">
-    <p>{example}</p>
-    <PromotionAdd />
+<Layout title="Template" description="Template">
+	<main class="f-col f-justify-center text-center">
+		<h1 class="mt-6 fw-500">Template Astro Lifo</h1>
+		<div class="f-row g-3 mx-auto">
+			<Count client:visible />
+			<Count client:visible />
+			<Count client:visible />
+		</div>
+	</main>
 </Layout>
+
+<style></style>

@@ -1,14 +1,14 @@
 import { defineConfig } from 'astro/config';
 
-import react from "@astrojs/react";
+import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://lifo123.github.io/Template',
+  base: 'Template',
   integrations: [react()],
-  site: 'https://lifo123.github.io/',
-  base: 'Project',
   outDir: 'Build',
   build: {
-    assets: 'assets'
+    assets: 'assets',
   }
 });

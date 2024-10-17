@@ -7,7 +7,6 @@ Build/
 
 # dependencies
 node_modules/
-scss/
 
 # logs
 npm-debug.log*
@@ -24,4 +23,3 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
-.vscode

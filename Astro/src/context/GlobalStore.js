@@ -1,3 +1,10 @@
-import { atom } from "nanostores";
+import { atom } from 'nanostores'
 
-export const ExampleStore = atom(20);
+export const ExampleStore = atom('Template Store')
+
+
+//Alert Stores
+export const AlertStore = atom({
+    text: "Alert",
+    type: "none",
+})
