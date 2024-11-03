@@ -1,5 +1,3 @@
-.count {
-    padding: 13px 26px;
-    border: solid 1px #000;
-
+body{
+    background-color: var(--lb-bg);
 }

@@ -1,20 +1,23 @@
 {
   "homepage": "https://lifo123.github.io/Template",
-  "name": "template",
+  "name": "@lifo123/template-astro",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev --host",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "gh-pages -d Build",
-    "predeploy": "npm run build"
+    "deploy": "gh-pages -d Build --dotfiles",
+    "predeploy": "pnpm run build"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "^3.1.8",
     "@astrojs/react": "^3.6.2",
+    "@astrojs/rss": "^4.0.9",
+    "@astrojs/sitemap": "^3.2.1",
     "@nanostores/react": "^0.8.0",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
@@ -24,6 +27,8 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1"
+    "@types/node": "^22.8.2",
+    "gh-pages": "^6.1.1",
+    "typescript": "^5.6.3"
   }
 }
