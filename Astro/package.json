@@ -1,6 +1,6 @@
 {
-  "homepage": "https://lifo123.github.io/Template",
-  "name": "@lifo123/template-astro",
+  "homepage": "https://lifo123.site/Template",
+  "name": "template-astro",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
