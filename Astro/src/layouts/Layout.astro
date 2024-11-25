@@ -1,6 +1,5 @@
 ---
 import "@Assets/css/Global.css";
-import ViewTransitions from "astro/components/ViewTransitions.astro";
 
 interface Props {
 	title: string;
@@ -14,33 +13,30 @@ const url = site ? new URL(path, site).href : null;
 ---
 
 <script>
-	const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-	function setDarkMode(document : any) {
+	const setDarkMode = (document: Document) => {
 		const isDark = window.matchMedia(
 			"(prefers-color-scheme: dark)",
 		).matches;
 		const theme =
 			localStorage.getItem("F-Theme") || (isDark ? "dark" : "light");
 
-		if(theme === "system"){
-			document.documentElement.classList[isDark ? "add" : "remove"]("dark");
-			document.documentElement.style.colorScheme = isDark ? "dark" : "light";
-			return;
-		}
+		const applyTheme = (mode: string) => {
+			document.documentElement.classList.toggle("dark", mode === "dark");
+			document.documentElement.style.colorScheme = mode;
+		};
 
-		document.documentElement.classList[theme === "dark" ? "add" : "remove"](
-			"dark",
-		);
-		document.documentElement.style.colorScheme =
-			theme === "dark" ? "dark" : "light";
-	}
+		theme === "system"
+			? applyTheme(isDark ? "dark" : "light")
+			: applyTheme(theme);
+	};
 
 	setDarkMode(document);
-
-	document.addEventListener("astro:before-swap", (event) =>
-		setDarkMode(event.newDocument),
+	document.addEventListener("astro:before-swap", (e) =>
+		setDarkMode(e.newDocument),
 	);
-	mediaQuery.addEventListener("change", () => setDarkMode(document));
+	window
+		.matchMedia("(prefers-color-scheme: dark)")
+		.addEventListener("change", () => setDarkMode(document));
 </script>
 
 <html lang="en" translate="no">
@@ -50,13 +46,13 @@ const url = site ? new URL(path, site).href : null;
 		<meta name="description" content={description} />
 
 		<meta charset="utf-8" />
-		<meta name="color-scheme" content="light dark" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<!--Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
 			rel="stylesheet"
 		/>
 
@@ -64,7 +60,7 @@ const url = site ? new URL(path, site).href : null;
 		<meta property="og:title" content={title} />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={url} />
-		<meta property="og:locale" content="en" />
+		<meta property="og:locale" content="en_US" />
 		<meta property="og:description" content={description} />
 		<meta property="og:site_name" content="Template" />
 		<meta property="og:image" content="" />
@@ -79,12 +75,13 @@ const url = site ? new URL(path, site).href : null;
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content="" />
 		<meta name="twitter:image:alt" content="Template Image" />
-		<ViewTransitions transition:animate="initial" />
 		<!-- Styles -->
 		<link
 			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/gh/Lifo123/FlifoCSS@main/src/output/Flifo.css"
+			href="https://lifo123.github.io/FlifoCSS/Flifo.css"
 		/>
+		<link rel="icon" href="./Flifo.svg" />
+		<link rel="apple-touch-icon" href="./Flifo.svg" />
 	</head>
 	<body class="f-col">
 		<slot />

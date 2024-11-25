@@ -11,12 +11,14 @@
       "@Hooks/*": ["src/hooks/*"],
       "@Apps/*": ["src/apps/*"],
       "@Services/*": ["src/services/*"],
-      "@Utilities/*": ["src/utils/*"],
+      "@Utils/*": ["src/utils/*"],
       "@Layouts/*": ["src/layouts/*"],
       "@Assets/*": ["src/assets/*"],
-      "@Context/*": ["src/context/*"],
       "@Pages/*": ["src/pages/*"],
-      "@Content/*": ["src/content/*"]
+      "@Content/*": ["src/content/*"],
+      "@Styles/*": ["src/styles/*"],
+      "@Stores/*": ["src/stores/*"],
+
     },
     "skipLibCheck": true,
     "strict": true,
