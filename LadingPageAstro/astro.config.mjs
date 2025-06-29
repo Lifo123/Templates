@@ -9,7 +9,7 @@ export default defineConfig({
   site: 'https://lifo123.site/Template',
   base: '/Template/',
   integrations: [react(), mdx(), sitemap()],
-  outDir: 'build',
+  outDir: 'Build',
   build: {
     assets: 'assets',
   }

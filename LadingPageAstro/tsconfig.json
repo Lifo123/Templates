@@ -1,5 +1,4 @@
 {
-  "extends": "astro/tsconfigs/base",
   "include": ["src", "env.d.ts"],
   "exclude": ["node_modules"],
   "compilerOptions": {
@@ -8,18 +7,14 @@
     "baseUrl": ".",
     "paths": {
       "@Components/*": ["src/components/*"],
-      "@Sections/*": ["src/components/astro/sections/*"],
       "@Hooks/*": ["src/hooks/*"],
       "@Apps/*": ["src/apps/*"],
       "@Services/*": ["src/services/*"],
       "@Utils/*": ["src/utils/*"],
       "@Layouts/*": ["src/layouts/*"],
-      "@Assets/*": ["src/assets/*"],
       "@Pages/*": ["src/pages/*"],
       "@Content/*": ["src/content/*"],
       "@Styles/*": ["src/styles/*"],
-      "@Stores/*": ["src/stores/*"],
-
     },
     "skipLibCheck": true,
     "strict": true,

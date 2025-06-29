@@ -1,0 +1,21 @@
+@import url('./Variables.css');
+
+
+@font-face {
+    font-family: 'Geist';
+    src: url('/Template/Geist.woff2');
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'DMSans';
+    src: url('/Template/DMSans-Variable.woff2');
+    font-display: swap;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+    font-family: Geist, sans-serif;
+    font-weight: 400;
+}
