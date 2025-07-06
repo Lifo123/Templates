@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev --host",
-    "build": "astro build",
+    "build": "pnpm run build:styles && astro build",
+    "build:styles": "tailwindcss -i ./src/styles/Global.css -o ./src/styles/Final.css",
     "preview": "astro preview",
     "astro": "astro",
     "deploy": "gh-pages -d build --dotfiles",
@@ -27,8 +28,10 @@
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.1.11",
     "@types/node": "^22.15.34",
     "gh-pages": "^6.3.0",
+    "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3"
   }
 }
