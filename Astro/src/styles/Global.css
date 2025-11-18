@@ -1,5 +1,6 @@
 @import 'tailwindcss';
-@import './theme.css';
-@import "./Flifo.css";
+@import './Flifo.css';
 
-@custom-variant dark (&:where(.dark, .dark *));
+html {
+    @apply bg-gray-1;
+}

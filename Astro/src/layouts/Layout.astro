@@ -13,11 +13,8 @@ const url = site ? new URL(path, site).href : null;
 ---
 
 <script>
-    const BASE_STORAGE_KEY =
-        (window.location.pathname.split("/").filter(Boolean)[0] || "lifo/lib-") +
-        "-prefs";
-    let savedPrefs = JSON.parse(localStorage.getItem(BASE_STORAGE_KEY) || "{}");
-
+    let storageKey = "preferences";
+    let savedPrefs = JSON.parse(localStorage.getItem(storageKey) || "{}");
 
     const setDarkMode = (doc: Document) => {
         const prefersDark = window.matchMedia(
@@ -33,10 +30,9 @@ const url = site ? new URL(path, site).href : null;
 
         doc.documentElement.classList.toggle("dark", mode === "dark");
         doc.documentElement.classList.toggle("light", mode === "light");
-        doc.documentElement.style.colorScheme = mode;
 
         localStorage.setItem(
-            BASE_STORAGE_KEY,
+            storageKey,
             JSON.stringify({
                 ...savedPrefs,
                 theme: savedPrefs.theme || "system",
@@ -54,7 +50,6 @@ const url = site ? new URL(path, site).href : null;
         .matchMedia("(prefers-color-scheme: dark)")
         .addEventListener("change", () => setDarkMode(document));
 </script>
-
 
 <html lang="en" translate="no">
 	<head>
