@@ -3,7 +3,6 @@ import localFont from 'next/font/local';
 import ThemeProvider from "@Shared/components/theme-provider";
 import '@Shared/styles/Global.css';
 
-
 const geist = localFont({
   src: '../assets/fonts/Geist.ttf',
   variable: '--font-geist',
@@ -13,7 +12,7 @@ const geist = localFont({
 
 export const metadata: Metadata = {
   title: {
-    template: "Template | %s",
+    template: "%s",
     default: "Template",
   },
   description: 'description for template',
@@ -50,7 +49,7 @@ export default function RootLayout({
 
 
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <body className={`text-gray-12 antialiased f-col ${geist.variable}`}>
         <ThemeProvider
           attribute="class"
